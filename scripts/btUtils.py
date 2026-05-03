@@ -144,7 +144,6 @@ def getLinuxDistroInfo():
          parsedRelease = packaging.version.parse(distroInfo["release"])
          distroInfo["major"] = parsedRelease.major
          distroInfo["minor"] = parsedRelease.minor
-         break
       except Exception:
          # On some distro (eg Debian sid), lsb_release -a returns 'Release: n/a', which makes parse() crash. Since major and
          # minor versions are mostly used for logging, let's use dummy values if this happens
